@@ -357,6 +357,12 @@ h1 { margin: 0; }
 /* end about */
 
 /* start team */
+.profile-pic{
+  height: auto;
+  min-height: 150px;
+  width: auto;
+}
+
 #team
   {
     background: #404040;
@@ -374,7 +380,7 @@ h1 { margin: 0; }
   {
     overflow: hidden;
     position: relative;
-    margin: 30px 0 0 0;
+    margin: 3 0 0 0;
   }
 #team .team_thumb img
   {
@@ -417,6 +423,7 @@ h1 { margin: 0; }
   {
     background: #303030;
     padding: 10px;
+    border-radius: 1rem;
   }
 #team .team_description h5
   {
