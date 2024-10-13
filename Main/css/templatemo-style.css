@@ -69,6 +69,7 @@ body
 /* end page container */
 
 /* start navigation */
+
 .navbar-default
   {
     background: #FFFFFF;
@@ -243,6 +244,10 @@ h1 { margin: 0; }
   -webkit-transition: 0.5s;
   transition: 0.5s;
   -webkit-transform-origin-x: 50%;
+}
+
+.city-choice{
+  background: rgb(172, 168, 168);
 }
 
 .rotating.flip {

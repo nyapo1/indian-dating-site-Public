@@ -23,15 +23,18 @@
 		
 		<nav class="navbar navbar-expand-md bg-body-tertiary rounded justify-content-center align-items-center navbar-defaul" aria-label="Thirteenth navbar example">
       <div class="container-fluid">
-				<a class="navbar-brand col-md-3 me-0 text-center text-success" href="#"><i>DESI GIRLS</i></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample11" aria-controls="navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+				<a class="navbar-brand col-sm-3 col-md-2 me-0 text-center text-success contact-icon" href="#"></a>
+
+				<a class="navbar-brand col-sm-3 col-md-2 me-0 text-center text-success ms-3" href="#">DESI GIRLS</a>
+				
+        <button class="navbar-toggler btn-outline-success" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample11" aria-controls="navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
+          <span class=""><i class="bi bi-person-fill fs-2 text-success"></i></span>
         </button>
 			
 
         <div class="collapse navbar-collapse d-lg-flex ms-4" id="navbarsExample11">
           
-          <ul class="navbar-nav col-lg-6 justify-content-lg-center">
+          <ul class="navbar-nav col-lg-6 justify-content-center">
             <li class="nav-item">
               <a class="nav-link active mx-3 my-1 text-success" aria-current="page" href="#home">Home</a>
             </li>
@@ -43,7 +46,7 @@
             </li>
            
           </ul>
-          <div class="d-lg-flex col-lg-3 justify-content-lg-end mx-auto">
+          <div class="d-flex   mx-auto">
             <button type="button" class="btn btn-success me-2 btn-md fs-md-3">Login</button>
 						<button type="button" class="btn btn-success btn-m fs-md-3">Sign-up</button>
           </div>
@@ -109,108 +112,103 @@
 		<section id="team" class="text-center">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-12 wow fadeInDown" data-wow-delay="900">
-						<h3>CHOOSE ANY GIRL YOU LIKE</h3>
+					<div class="text-center col-md-12 wow fadeInDown" data-wow-delay="2000">
+						<h3 class="text-dark">Top Location in India</h3>
 					</div>
+					<div class="col-md-2"></div>
+					<div class="col-md-8 text-center wow fadeInDown text-dark">
+						<h4>Find call girls in your city or nearby areas.Choose any girls you like</h4>
+					</div>
+					<div class="col-md-2"></div>
 				
-					<div class=" row wow fadeInLet team_description my-3 ms-2" data-wow-delay="2000">
-						<div class="col-3 mx-0 d-flex justify-content-center align-items-center">
-							<img src="https://images.pexels.com/photos/1162983/pexels-photo-1162983.jpeg?auto=compress&cs=tinysrgb&w=600" class=" rounded float-start img-fluid profile-pic " alt="Tracy">
-						</div>
-						<div class=" col-8 mx-0">
-							<h5>TRACY</h5>
-							<p>I create a welcoming environment that makes you feel at ease. My adventurous spirit and zest for life shine through in everything I do. Join me for an unforgettable experience where fun and connection come together.</p>
-
-							<div class="col-sm-12 d-flex justify-content-center">
-								
-									<a href="https://wa.me/YOUR_PHONE_NUMBER" class="text-decoration-none" target="_blank">
-										<i class="bi bi-whatsapp whatsapp-icon text-success"  aria-hidden="true"> 	Whatsapp</i>
-									</a>
-								
-									<a href="tel:+YOUR_PHONE_NUMBER" class="text-decoration-none ms-4" target="_blank">
-										<i class="bi bi-telephone-fill text-danger " aria-hidden="true">	Call</i>
-								</a>
-
-								<a href="https://t.me/YOUR_USERNAME" class="text-decoration-none ms-4" target="_blank">
-									<i class="bi bi-telegram text-primary" aria-hidden="true">Telegram</i> 
-							</a>
-							</div>
-						</div>
+				<div class="col-md-12 my-4 city-choice py-3 px-5 rounded align-items-center team_description ">
+					<div class="search_box">
+							<form name="search_form" method="post" id="search_form" action="javascript:void(0);" onsubmit="searchGirls()">
+									<input type="hidden" name="_token" value="IxCEnrgE55Rlfm6Fw2i3g0P49SdSPKYP4vYicFjt">
+									<div class="row">
+											<!-- <div class="col-lg-3 col-md-6">
+													<div class="selectBox">
+															<select name="category" class="form-control p-3 m-2" id="search_category" required="">
+																	<option value="" selected="">Category</option>
+																	<option value="call-girls">Call Girls</option>
+																	<option value="massage">Massage</option>
+																	<option value="male-escorts">Male Escorts</option>
+															</select>
+													</div>
+											</div> -->
+											<div class="col-lg-2 col-md-6">
+													<div class="selectBox">
+															<select class="form-control all_state get_city p-3 m-2" id="state" required="required" name="state" onchange="populateCities()">
+																	<option value="" selected="selected">State</option>
+																	<option value="Andaman & Nicobar Islands">Andaman & Nicobar Islands</option>
+																	<option value="Andhra Pradesh">Andhra Pradesh</option>
+																	<option value="Arunachal Pradesh">Arunachal Pradesh</option>
+																	<option value="Assam">Assam</option>
+																	<option value="Bihar">Bihar</option>
+																	<option value="Chandigarh">Chandigarh</option>
+																	<option value="Chhattisgarh">Chhattisgarh</option>
+																	<option value="Dadra & Nagar Haveli">Dadra & Nagar Haveli</option>
+																	<option value="Daman & Diu">Daman & Diu</option>
+																	<option value="Delhi">Delhi</option>
+																	<option value="Goa">Goa</option>
+																	<option value="Gujarat">Gujarat</option>
+																	<option value="Haryana">Haryana</option>
+																	<option value="Himachal Pradesh">Himachal Pradesh</option>
+																	<option value="Jammu & Kashmir">Jammu & Kashmir</option>
+																	<option value="Jharkhand">Jharkhand</option>
+																	<option value="Karnataka">Karnataka</option>
+																	<option value="Kerala">Kerala</option>
+																	<option value="Lakshadweep">Lakshadweep</option>
+																	<option value="Madhya Pradesh">Madhya Pradesh</option>
+																	<option value="Maharashtra">Maharashtra</option>
+																	<option value="Manipur">Manipur</option>
+																	<option value="Meghalaya">Meghalaya</option>
+																	<option value="Mizoram">Mizoram</option>
+																	<option value="Nagaland">Nagaland</option>
+																	<option value="Odisha">Odisha</option>
+																	<option value="Puducherry">Puducherry</option>
+																	<option value="Punjab">Punjab</option>
+																	<option value="Rajasthan">Rajasthan</option>
+																	<option value="Sikkim">Sikkim</option>
+																	<option value="Tamil Nadu">Tamil Nadu</option>
+																	<option value="Telangana">Telangana</option>
+																	<option value="Tripura">Tripura</option>
+																	<option value="Uttar Pradesh">Uttar Pradesh</option>
+																	<option value="Uttarakhand">Uttarakhand</option>
+																	<option value="West Bengal">West Bengal</option>
+															</select>
+													</div>
+											</div>
+											<div class="col-lg-2 col-md-4">
+													<div class="selectBox ">
+															<select name="city" class="all_cities form-control p-3 m-2" id="city">
+																	<option value="">City</option>
+															</select>
+													</div>
+													<input type="hidden" name="cities" id="cities">
+											</div>
+											<div class="col-lg-6 col-md-6">
+													<div class="searchFld ">
+															<input name="keyword" class="form-control p-3 m-2" type="text" id="search_keyword" placeholder="write more description here..." value="">
+													</div>
+											</div>
+											<div class="col-lg-2 col-md-4">
+													<div class="input_form ">
+															<button type="submit" class="form-control p-3 m-2" id="submit_search">Search<i class="bi bi-search ms-1"></i></button>
+													</div>
+											</div>
+									</div>
+							</form>
 					</div>
+			</div>
+			
+			
 
-					<div class=" row wow fadeInLet team_description mt-3 ms-2" data-wow-delay="2000">
-						<div class="col-3 mx-0 d-flex justify-content-center align-items-center">
-							<img src="https://images.pexels.com/photos/1484990/pexels-photo-1484990.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class=" rounded float-start img-fluid profile-pic " alt="Meera">
-						</div>
-						<div class=" col-8 mx-0">
-							<h5>Meera</h5>
-							<p>I enjoy expressing my creativity in web Cam through various themes and outfits, ensuring that every session is unique and unforgettable.Join me for an experience filled with laughter, connection, and a touch of magic. </p>
-							<div class="col-sm-12 d-flex justify-content-center">
-								
-									<a href="https://wa.me/YOUR_PHONE_NUMBER" class="text-decoration-none" target="_blank">
-										<i class="bi bi-whatsapp whatsapp-icon text-success"  aria-hidden="true"> 	Whatsapp</i>
-									</a>
-								
-									<a href="tel:+YOUR_PHONE_NUMBER" class="text-decoration-none ms-4" target="_blank">
-										<i class="bi bi-telephone-fill text-danger " aria-hidden="true">	Call</i>
-								</a>
-
-								<a href="https://t.me/YOUR_USERNAME" class="text-decoration-none ms-4" target="_blank">
-									<i class="bi bi-telegram text-primary" aria-hidden="true">Telegram</i> 
-							</a>
-							</div>
-						</div>
-					</div>
-					<div class=" row wow fadeInLet team_description mt-3 ms-2" data-wow-delay="2000">
-						<div class="col-3 mx-0 d-flex justify-content-center align-items-center">
-							<img src="https://images.pexels.com/photos/16499147/pexels-photo-16499147/free-photo-of-indian-girl.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class=" rounded float-start img-fluid profile-pic " alt="Saanvi">
-						</div>
-						<div class=" col-8 mx-0">
-							<h5>Saanvi </h5>
-							<p>I am not shy in front of the camera,  loves exploring new hobbies,  sharing snippets of my life with my fans. With a commitment to making every interaction special, I am not just a cam girl; but a friend who brings joy and excitement to my viewers.</p>
-
-							<div class="col-sm-12 d-flex justify-content-center">
-								
-									<a href="https://wa.me/YOUR_PHONE_NUMBER" class="text-decoration-none" target="_blank">
-										<i class="bi bi-whatsapp whatsapp-icon text-success"  aria-hidden="true"> 	Whatsapp</i>
-									</a>
-								
-									<a href="tel:+YOUR_PHONE_NUMBER" class="text-decoration-none ms-4" target="_blank">
-										<i class="bi bi-telephone-fill text-danger " aria-hidden="true">	Call</i>
-								</a>
-
-								<a href="https://t.me/YOUR_USERNAME" class="text-decoration-none ms-4" target="_blank">
-									<i class="bi bi-telegram text-primary" aria-hidden="true">Telegram</i> 
-							</a>
-							</div>
-						</div>
-					</div>
-					<div class=" row wow fadeInLet team_description mt-3 ms-2" data-wow-delay="2000">
-						<div class="col-3 mx-0 pt-sm-4 d-flex justify-content-center align-items-center">
-							<img src="https://images.pexels.com/photos/13079571/pexels-photo-13079571.jpeg?auto=compress&cs=tinysrgb&w=600" class=" rounded float-start img-fluid profile-pic " alt="Aanya">
-						</div>
-						<div class=" col-8 mx-0 row">
-							<h5>Aanya</h5>
-							<p>I love to connect with my viewers, sharing stories and laughter while embracing my adventurous side. Whether I am chatting about my favorite hobbies or exploring new themes during my streams, i am always leaves a lasting impression.</p>
-
-							<div class="col-sm-12 d-flex justify-content-center">
-								
-									<a href="https://wa.me/YOUR_PHONE_NUMBER" class="text-decoration-none" target="_blank">
-										<i class="bi bi-whatsapp whatsapp-icon text-success"  aria-hidden="true"> 	Whatsapp</i>
-									</a>
-								
-									<a href="tel:+YOUR_PHONE_NUMBER" class="text-decoration-none ms-4" target="_blank">
-										<i class="bi bi-telephone-fill text-danger " aria-hidden="true">	Call</i>
-								</a>
-
-								<a href="https://t.me/YOUR_USERNAME" class="text-decoration-none ms-4" target="_blank">
-									<i class="bi bi-telegram text-primary" aria-hidden="true">Telegram</i> 
-							</a>
-							</div>
-						</div>
-					</div>
-
-							
+					
+				</div>
+			
+				<div class="row" id="results" >
+					<!-- Individual column generated from javascript							 -->
 				</div>
 			</div>
 		</section>
@@ -218,80 +216,18 @@
 		<!-- end team -->
 
 		<!-- start service -->
+	
 
-		<!-- <section id="service">
+		<section id="service">
 			<div class="container">
-				<div class="row">
-					<div class="text-center col-md-12 wow fadeInDown" data-wow-delay="2000">
-						<h3>CRYSTAL SERVICES</h3>
-					</div>
-					<div class="col-md-2"></div>
-					<div class="col-md-8 text-center">
-						<p>Mauris mattis vitae libero eget iaculis. Donec et augue quis quam porttitor consectetur ut nec sem. Integer sagittis viverra quam quis ultricies. Aenean risus nisl, consequat at nunc id, tincidunt tristique mauris.</p>
-					</div>
-					<div class="col-md-2"></div>
-					<div class="col-sm-6 col-md-4 wow fadeInLeft" data-wow-delay="2000">
-						<div class="media">
-							<i class="fa fa-cog pull-left media-object"></i>
-								<div class="media-body">
-									<h4 class="media-heading">WEB DEVELOPMENT</h4>
-									<p>In suscipit, purus id ultrices sodales, nunc mi porta nibh, bibendum maximus sem mi id metus. Suspendisse faucibus suscipit diam.</p>
-								</div>
-						</div>
-					</div>
-					<div class="col-sm-6 col-md-4 wow fadeInDown" data-wow-delay="2000">
-						<div class="media">
-							<i class="fa fa-globe pull-left media-object"></i>
-								<div class="media-body">
-									<h4 class="media-heading">DOMAIN HOSTING</h4>
-									<p>In suscipit, purus id ultrices sodales, nunc mi porta nibh, bibendum maximus sem mi id metus. Suspendisse faucibus suscipit diam.</p>
-								</div>
-						</div>
-					</div>
-					<div class="col-sm-6 col-md-4 wow fadeInRight" data-wow-delay="2000">
-						<div class="media">
-							<i class="fa fa-desktop pull-left media-object"></i>
-								<div class="media-body">
-									<h4 class="media-heading">WEB DESIGN</h4>
-									<p>In suscipit, purus id ultrices sodales, nunc mi porta nibh, bibendum maximus sem mi id metus. Suspendisse faucibus suscipit diam.</p>
-								</div>
-						</div>
-					</div>
-					<div class="col-sm-6 col-md-4 wow fadeInLeft" data-wow-delay="2000">
-						<div class="media">
-							<i class="fa fa-heart pull-left media-object"></i>
-								<div class="media-body">
-									<h4 class="media-heading">SOCIAL MEDIA</h4>
-									<p>In suscipit, purus id ultrices sodales, nunc mi porta nibh, bibendum maximus sem mi id metus. Suspendisse faucibus suscipit diam.</p>
-								</div>
-						</div>
-					</div>
-					<div class="col-sm-6 col-md-4 wow fadeInDown" data-wow-delay="2000">
-						<div class="media">
-							<i class="fa fa-laptop pull-left media-object"></i>
-								<div class="media-body">
-									<h4 class="media-heading">RESPONSIVE THEMES</h4>
-									<p>In suscipit, purus id ultrices sodales, nunc mi porta nibh, bibendum maximus sem mi id metus. Suspendisse faucibus suscipit diam.</p>
-								</div>
-						</div>
-					</div>
-					<div class="col-sm-6 col-md-4 wow fadeInRight" data-wow-delay="2000">
-						<div class="media">
-							<i class="fa fa-envelope pull-left media-object"></i>
-								<div class="media-body">
-									<h4 class="media-heading">EMAIL HOSTING</h4>
-									<p>In suscipit, purus id ultrices sodales, nunc mi porta nibh, bibendum maximus sem mi id metus. Suspendisse faucibus suscipit diam.</p>
-								</div>
-						</div>
-					</div>
-				</div>
+			
 			</div>
-		</section> -->
+		</section>
 		
 		<!-- end service -->
 
 		<!-- start newsletter -->
-<!-- 
+
 		<section id="newsletter" class="text-center">
 			<div class="container">
 				<div class="row">
@@ -317,13 +253,13 @@
 					</div>
 				</div>
 			</div>
-		</section> -->
+		</section>
 		
 		<!-- end newsletter -->
 
 		<!-- start work -->
 		 
-		<!-- <section id="work" class="text-center">
+		<section id="work" class="text-center">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 wow fadeInDown" data-wow-delay="2000">
@@ -384,13 +320,13 @@
 					</div>
 				</div>
 			</div>
-		</section> -->
+		</section>
 
 		<!-- end work -->
 
 		<!-- start pricing -->
 
-		<!-- <section id="pricing" class="text-center">
+		<section id="pricing" class="text-center">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 wow fadeInDown" data-wow-delay="2000">
@@ -455,7 +391,7 @@
 					</div>
 				</div>
 			</div>
-		</section> -->
+		</section>
 		
 		<!-- end pricing -->
 
