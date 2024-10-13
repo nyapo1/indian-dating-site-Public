@@ -153,16 +153,25 @@ $(function(){
         <div class="col-8 mx-auto">
             <h5>${member.name}</h5>
             <p>${member.description}</p>
-                   <div class="col-sm-12 d-flex justify-content-center my-2">
-                    	<button class="btn btn-light btn-md rounded mx-1">
+                   <div class="col-sm-12 d-flex justify-content-center mb-1">
+                   <div class="col-sm-12">
+                      <button class="btn btn-light col-sm-12 rounded mx-1">
                         <span class="text-dark text-center">Age:${member.Age}</span>
                       </button>
-                      <button class="btn btn-light btn-md rounded ">
+                   </div>
+                    <div class="col-sm-6">
+                       <button class="btn btn-light  rounded ">
                         <span class="text-dark text-center">State:${member.Location.State}</span>
                       </button>
-                        <button class="btn btn-light btn-md rounded mx-1">
+                   </div>
+                    	
+                     
+                       <div class="col-sm-6">
+                           <button class="btn btn-light  rounded mx-1">
                         <span class="text-dark text-center">City:${member.Location.City}</span>
-                      </button>
+                            </button>
+                       </div>
+                       
             </div>
             <div class="col-sm-12 d-flex justify-content-center">
                 <a href="https://wa.me/${member.phoneNumber}" class="text-decoration-none" target="_blank">
