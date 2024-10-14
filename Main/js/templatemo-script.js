@@ -209,25 +209,27 @@ teamMembers.forEach(member => {
         <div class="col-8 mx-auto">
             <h5>${member.name}</h5>
             <p>${member.description}</p>
-                   <div class="col-sm-12  d-flex justify-content-center  my-2">
-                    	<button class="btn btn-light   btn-sm btn-md-md rounded me-1">
-                        <span class="text-dark text-center">Age:${member.Age}</span>
-                      </button>
-                      <button class="btn btn-light  btn-sm  btn-md-md  rounded me-1">
-                        <span class="text-dark text-center">State:${member.Location.State}</span>
-                      </button>
-                        <button class="btn btn-light btn-sm  btn-md-md  rounded ">
-                        <span class="text-dark text-center">City:${member.Location.City}</span>
-                      </button>
+            <div class="col-sm-12  d-flex justify-content-center  my-2">
+                <button class="btn btn-light   btn-sm btn-md-md rounded me-1">
+                    <span class="text-dark text-center">Age:${member.Age}</span>
+                </button>
+             </div>    
+            <div class="col-sm-12  d-flex justify-content-center  my-2">
+                <button class="btn btn-light  btn-sm  btn-md-md  rounded me-1">
+                <span class="text-dark text-center">State:${member.Location.State}</span>
+                </button>
+                <button class="btn btn-light btn-sm  btn-md-md  rounded ">
+                <span class="text-dark text-center">City:${member.Location.City}</span>
+                </button>
             </div>
             <div class="col-sm-12 d-flex justify-content-center">
-                <a href="https://wa.me/${member.phoneNumber}" class="text-decoration-none" target="_blank">
+                <a href="https://wa.me/${member.phoneNumber}" class="text-decoration-none mx-1" target="_blank">
                     <i class="bi bi-whatsapp whatsapp-icon text-success" aria-hidden="true"> Whatsapp</i>
                 </a>
-                <a href="tel:+${member.phoneNumber}" class="text-decoration-none ms-4" target="_blank">
+                <a href="tel:+${member.phoneNumber}" class="text-decoration-none mx-4" target="_blank">
                     <i class="bi bi-telephone-fill text-danger" aria-hidden="true"> Call</i>
                 </a>
-                <a href="https://t.me/${member.username}" class="text-decoration-none ms-4" target="_blank">
+                <a href="https://t.me/${member.username}" class="text-decoration-none mx-1" target="_blank">
                     <i class="bi bi-telegram text-primary" aria-hidden="true"> Telegram</i>
                 </a>
             </div>
