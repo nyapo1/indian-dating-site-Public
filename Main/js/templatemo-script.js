@@ -209,13 +209,13 @@ teamMembers.forEach(member => {
             <h5>${member.name}</h5>
             <p>${member.description}</p>
                    <div class="col-sm-12 d-flex justify-content-center my-2">
-                    	<button class="btn btn-light btn-md rounded me-1">
+                    	<button class="btn btn-light btn-sm btn-md-md btn-lg-lg rounded me-1">
                         <span class="text-dark text-center">Age:${member.Age}</span>
                       </button>
-                      <button class="btn btn-light btn-md rounded me-1">
+                      <button class="btn btn-light  btn-sm btn-md-md btn-lg-lg rounded me-1">
                         <span class="text-dark text-center">State:${member.Location.State}</span>
                       </button>
-                        <button class="btn btn-light btn-md rounded ">
+                        <button class="btn btn-light btn-sm btn-md-md btn-lg-lg rounded ">
                         <span class="text-dark text-center">City:${member.Location.City}</span>
                       </button>
             </div>

@@ -166,7 +166,7 @@ h1 { margin: 0; }
   height: auto;        /* Maintain the aspect ratio */
   max-height: 50vh;   /* Limit the height to 100vh */
   object-fit: cover;   /* Ensure the image covers the area without distortion */
-  object-position: 40% 25%; 
+  object-position: 0% 25%; 
 }
 .slider-caption {
   color:white;
