@@ -147,6 +147,7 @@ $(function(){
             filteredMembers.forEach(member => {
                 const memberDiv = document.createElement('div');
                 memberDiv.innerHTML = `
+                
         <div class="col-3 mx-auto d-flex justify-content-center align-items-center">
             <img src="${member.imgSrc}" class="rounded float-start img-fluid profile-pic" alt="${member.name}">
         </div>
@@ -154,8 +155,8 @@ $(function(){
             <h5>${member.name}</h5>
             <p>${member.description}</p>
                    <div class="col-sm-12 d-flex justify-content-center mb-1">
-                   <div class="col-sm-12">
-                      <button class="btn btn-light col-sm-12 rounded mx-1">
+                   <div class="col-sm-4 me-1">
+                      <button class="btn btn-light col-sm-12 rounded ">
                         <span class="text-dark text-center">Age:${member.Age}</span>
                       </button>
                    </div>
@@ -166,8 +167,8 @@ $(function(){
                    </div>
                     	
                      
-                       <div class="col-sm-6">
-                           <button class="btn btn-light  rounded mx-1">
+                       <div class="col-sm-6 ms-1">
+                           <button class="btn btn-light  rounded ">
                         <span class="text-dark text-center">City:${member.Location.City}</span>
                             </button>
                        </div>
@@ -208,14 +209,14 @@ teamMembers.forEach(member => {
         <div class="col-8 mx-auto">
             <h5>${member.name}</h5>
             <p>${member.description}</p>
-                   <div class="col-sm-12 d-flex justify-content-center my-2">
-                    	<button class="btn btn-light btn-sm btn-md-md btn-lg-lg rounded me-1">
+                   <div class="col-sm-12  d-flex justify-content-center  my-2">
+                    	<button class="btn btn-light   btn-sm btn-md-md rounded me-1">
                         <span class="text-dark text-center">Age:${member.Age}</span>
                       </button>
-                      <button class="btn btn-light  btn-sm btn-md-md btn-lg-lg rounded me-1">
+                      <button class="btn btn-light  btn-sm  btn-md-md  rounded me-1">
                         <span class="text-dark text-center">State:${member.Location.State}</span>
                       </button>
-                        <button class="btn btn-light btn-sm btn-md-md btn-lg-lg rounded ">
+                        <button class="btn btn-light btn-sm  btn-md-md  rounded ">
                         <span class="text-dark text-center">City:${member.Location.City}</span>
                       </button>
             </div>
