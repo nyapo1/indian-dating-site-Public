@@ -792,6 +792,18 @@ ul
     color: #66AF33;
   }
 
+  .hero-section {
+    background-color: #f8f9fa;
+    padding: 50px 0;
+}
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+.hero-description {
+    font-size: 1.2rem;
+}
+
 
   .form-control-dark {
     border-color: var(--bs-gray);
