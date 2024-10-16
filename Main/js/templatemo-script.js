@@ -11,8 +11,6 @@ $(function(){
   $(".rotate").textrotator();
 
   new WOW().init();
-
-  loadGoogleMap();
 });
 
 
@@ -160,117 +158,108 @@ localStorage.setItem('teamMembers', JSON.stringify(teamMembers));
         }
     }
 
-    function searchGirls() {
-        const state = document.getElementById('state').value;
-        const city = document.getElementById('city').value;
-        const resultsDiv = document.getElementById('results');
-
-        // Clear previous results
-        resultsDiv.innerHTML = '';
-
-        // Filter team members based on selected state and city or show all if none selected
-        const filteredMembers = teamMembers.filter(member => {
-            const matchesState = state ? member.Location.State === state : true;
-            const matchesCity = city ? member.Location.City === city : true;
-            return matchesState && matchesCity;
-        });
-
-        // Display filtered results
-        if (filteredMembers.length > 0) {
-            filteredMembers.forEach(member => {
-                const memberDiv = document.createElement('div');
-                memberDiv.innerHTML = `
-                
-        <div class="col-3 mx-auto d-flex justify-content-center align-items-center">
-            <img src="${member.imgSrc}" class="rounded float-start img-fluid profile-pic" alt="${member.name}">
-        </div>
-        <div class="col-8 mx-auto">
-            <h5>${member.name}</h5>
-            <p>${member.description}</p>
-            <div class="col-sm-12 d-flex justify-content-center mb-1">
-                   <div class="col-sm-4 me-1">
-                      <button class="btn btn-light col-sm-12 rounded ">
-                        <span class="text-dark text-center">Age:${member.Age}</span>
-                      </button>
-                   </div>
-                    <div class="col-sm-6">
-                       <button class="btn btn-light  rounded ">
-                        <span class="text-dark text-center">State:${member.Location.State}</span>
-                      </button>
-                   </div>
-                    	
-                     
-                       <div class="col-sm-6 ms-1">
-                           <button class="btn btn-light  rounded ">
-                        <span class="text-dark text-center">City:${member.Location.City}</span>
-                            </button>
-                       </div>
-                       
-            </div>
-            <div class="col-sm-12 d-flex justify-content-center">
-                <a href="https://wa.me/${member.phoneNumber}" class="text-decoration-none" target="_blank">
-                    <i class="bi bi-whatsapp whatsapp-icon text-success" aria-hidden="true"> Whatsapp</i>
-                </a>
-                <a href="tel:+${member.phoneNumber}" class="text-decoration-none ms-4" target="_blank">
-                    <i class="bi bi-telephone-fill text-danger" aria-hidden="true"> Call</i>
-                </a>
-                <a href="https://t.me/${member.username}" class="text-decoration-none ms-4" target="_blank">
-                    <i class="bi bi-telegram text-primary" aria-hidden="true"> Telegram</i>
-                </a>
-            </div>
-        </div>
-    `;
-                resultsDiv.appendChild(memberDiv);
-            });
-        } else {
-            resultsDiv.innerHTML = '<p>No results found.</p>';
-        }
-    }
 
 
-const teamContainer = document.getElementById('results');
 
 
-teamMembers.forEach(member => {
+
+
+
+
+
+// const teamContainer = document.getElementById('results');
+const resultsDiv = document.getElementById('results');
+const originalMembers = [...teamMembers]; // Store the original list
+
+// Function to display all members
+
+function displayAllMembers() {
+    resultsDiv.innerHTML = ''; // Clear previous results
+    originalMembers.forEach(member => {
+        const memberDiv = createMemberDiv(member); // Create member div
+        resultsDiv.appendChild(memberDiv);
+    });
+}
+
+// Function to create member div
+function createMemberDiv(member) {
     const memberDiv = document.createElement('div');
     memberDiv.className = 'row wow fadeInLeft team_description mt-3 mx-1';
     memberDiv.setAttribute('data-wow-delay', '2000');
 
     memberDiv.innerHTML = `
-        <div class="col-3 mx-auto d-flex justify-content-center align-items-center">
-            <a href="profile.html?name=${encodeURIComponent(member.name)}&imgSrc=${encodeURIComponent(member.imgSrc)}&description=${encodeURIComponent(member.description)}&age=${encodeURIComponent(member.Age)}&state=${encodeURIComponent(member.Location.State)}&city=${encodeURIComponent(member.Location.City)}&phoneNumber=${encodeURIComponent(member.phoneNumber)}&username=${encodeURIComponent(member.username)}">
-                <img src="${member.imgSrc}" class="rounded float-start img-fluid profile-pic" alt="${member.name}">
-            </a>
+    <a href="profile.html?name=${encodeURIComponent(member.name)}&imgSrc=${encodeURIComponent(member.imgSrc)}&description=${encodeURIComponent(member.description)}&age=${encodeURIComponent(member.Age)}&state=${encodeURIComponent(member.Location.State)}&city=${encodeURIComponent(member.Location.City)}&phoneNumber=${encodeURIComponent(member.phoneNumber)}&username=${encodeURIComponent(member.username)}" class="row mx-1 text-decoration-none">
+        <div class="col-md-3 col-sm-8 mx-auto d-flex justify-content-center align-items-center">
+            <img src="${member.imgSrc}" class="rounded float-start img-fluid profile-pic" alt="${member.name}">
         </div>
-        <div class="col-8 mx-auto">
+        <div class="col-sm-8 col-md-3 mx-auto">
             <h5>${member.name}</h5>
-            <p>${member.description}</p>
-            <div class="col-sm-12  d-flex justify-content-center  my-2">
-                <button class="btn btn-light   btn-sm btn-md-md rounded me-1">
-                    <span class="text-dark text-center">Age:${member.Age}</span>
-                </button>
-             </div>    
-            <div class="col-sm-12  d-flex justify-content-center  my-2">
-                <button class="btn btn-light  btn-sm  btn-md-md  rounded me-1">
-                <span class="text-dark text-center">State:${member.Location.State}</span>
-                </button>
-                <button class="btn btn-light btn-sm  btn-md-md  rounded ">
-                <span class="text-dark text-center">City:${member.Location.City}</span>
+            <div class="col-sm-12 d-flex justify-content-center my-2">
+                <button class="btn btn-light btn-sm btn-md-md rounded me-1">
+                    <span class="text-dark text-center">Age: ${member.Age}</span>
                 </button>
             </div>
-            <div class="col-sm-12 d-flex justify-content-center">
-                <a href="https://wa.me/${member.phoneNumber}" class="text-decoration-none mx-1" target="_blank">
-                    <i class="bi bi-whatsapp whatsapp-icon text-success" aria-hidden="true"> Whatsapp</i>
-                </a>
-                <a href="tel:+${member.phoneNumber}" class="text-decoration-none mx-4" target="_blank">
-                    <i class="bi bi-telephone-fill text-danger" aria-hidden="true"> Call</i>
-                </a>
-                <a href="https://t.me/${member.username}" class="text-decoration-none mx-1" target="_blank">
-                    <i class="bi bi-telegram text-primary" aria-hidden="true"> Telegram</i>
-                </a>
+            <div class="col-sm-12 d-flex justify-content-center my-2">
+                <button class="btn btn-light  rounded me-1">
+                    <span class="text-dark text-center">State: ${member.Location.State}</span>
+                </button>
+                <button class="btn btn-light  rounded">
+                    <span class="text-dark text-center">City: ${member.Location.City}</span>
+                </button>
             </div>
         </div>
-    `;
-    teamContainer.appendChild(memberDiv);
-});
+    </a>
+`;
+    return memberDiv;
+}
+
+// Search function
+
+
+
+function searchGirls() {
+    const state = document.getElementById('state').value;
+    const city = document.getElementById('city').value;
+    const resultsDiv = document.getElementById('results');
+
+    // Clear previous results
+    resultsDiv.innerHTML = '';
+
+    // Filter team members based on selected state and city
+    const filteredMembers = originalMembers.filter(member => {
+        const matchesState = state ? member.Location.State === state : true;
+        const matchesCity = city ? member.Location.City === city : true;
+        return matchesState && matchesCity;
+    });
+
+    // Display filtered results or show all members if none found
+    if (filteredMembers.length > 0) {
+        filteredMembers.forEach(member => {
+            const memberDiv = createMemberDiv(member);
+            resultsDiv.appendChild(memberDiv);
+        });
+    } else {
+        resultsDiv.innerHTML = '<p>No results found.</p>';
+    }
+
+    // Add back button
+    const backButton = document.createElement('button');
+    backButton.className = 'btn btn-secondary mt-3';
+    backButton.innerText = 'Back to All Members';
+    backButton.onclick = displayAllMembers;
+    resultsDiv.appendChild(backButton);
+}
+
+// Initial display of all members
+displayAllMembers();
+
+
+function getQueryParams() {
+    const params = {};
+    window.location.search.substring(1).split("&").forEach(param => {
+            const [key, value] = param.split("=");
+            params[decodeURIComponent(key)] = decodeURIComponent(value);
+    });
+    return params;
+}
 
