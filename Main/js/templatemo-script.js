@@ -239,7 +239,7 @@ function searchGirls() {
             resultsDiv.appendChild(memberDiv);
         });
     } else {
-        resultsDiv.innerHTML = '<p>No results found.</p>';
+        resultsDiv.innerHTML = '<h2 class="text-danger">No results found!!</h2>';
     }
 
     // Add back button
@@ -248,6 +248,10 @@ function searchGirls() {
     backButton.innerText = 'Back to All Members';
     backButton.onclick = displayAllMembers;
     resultsDiv.appendChild(backButton);
+
+      // Scroll to the results section
+      const resultsSection = document.getElementById('team');
+      resultsSection.scrollIntoView({ behavior: 'smooth' });
 }
 
 // Initial display of all members

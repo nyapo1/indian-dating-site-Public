@@ -8,10 +8,11 @@ body
     background: #FFFFFF;
     color: #555555;
     font-family: 'Open Sans', sans-serif;
-	line-height: 24px;
+    font-size: 24px; /* Set a base font size */
+	  line-height: 24px;
     position: relative;
   }
-  
+
 .blue {
 	color: #06C;
 }
@@ -164,7 +165,7 @@ h1 { margin: 0; }
   position: relative;
   width: 100%;
   height: auto;        /* Maintain the aspect ratio */
-  max-height: 50vh;   /* Limit the height to 100vh */
+  max-height: 60vh;   /* Limit the height to 100vh */
   object-fit: cover;   /* Ensure the image covers the area without distortion */
   object-position: 100% 25%; 
   margin-right: auto;
@@ -729,7 +730,7 @@ ul
 /* start contact */
 #contact
   {
-    background: #404040 url('../images/contact-bg.jpg') no-repeat;
+    background: #404040  ;
     background-size: cover;
     background-attachment: fixed;
     color: #FFFFFF;
@@ -749,11 +750,11 @@ ul
   }
 #contact .form-control
   {
-    background: #404040;
+    background: #747171;
     border: none;
     border-radius: 2px;
     box-shadow: none;
-    color: #FFFFFF;
+    color: #3a3939;
     margin: 10px 0 10px 0;
     opacity: 0.9;
   }
