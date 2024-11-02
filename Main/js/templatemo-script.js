@@ -13,7 +13,9 @@ $(function(){
   new WOW().init();
 });
 
-
+document.addEventListener("DOMContentLoaded", function() {
+    displayAllMembers(); // Display all members when the page loads
+});
 
 
     const citiesByState = {
@@ -140,23 +142,24 @@ $(function(){
     // Save the teamMembers object in local storage
 localStorage.setItem('teamMembers', JSON.stringify(teamMembers));
 
-    function populateCities() {
-        const stateSelect = document.getElementById('state');
-        const citySelect = document.getElementById('city');
-        const selectedState = stateSelect.value;
+function populateCities() {
+    const stateSelect = document.getElementById('state');
+    const citySelect = document.getElementById('city');
+    const selectedState = stateSelect.value;
 
-        // Clear previous city options
-        citySelect.innerHTML = '<option value="">City</option>';
+    // Clear previous cities
+    citySelect.innerHTML = '<option value="">City</option>';
 
-        if (selectedState && citiesByState[selectedState]) {
-            citiesByState[selectedState].forEach(city => {
-                const option = document.createElement('option');
-                option.value = city;
-                option.textContent = city;
-                citySelect.appendChild(option);
-            });
-        }
+    if (selectedState) {
+        const cities = citiesByState[selectedState];
+        cities.forEach(city => {
+            const option = document.createElement('option');
+            option.value = city;
+            option.textContent = city;
+            citySelect.appendChild(option);
+        });
     }
+}
 
 
 
@@ -217,42 +220,47 @@ function createMemberDiv(member) {
 
 
 
-function searchGirls() {
-    const state = document.getElementById('state').value;
-    const city = document.getElementById('city').value;
+function searchGirls(state, city) {
     const resultsDiv = document.getElementById('results');
+    resultsDiv.innerHTML = ''; // Clear previous results
 
-    // Clear previous results
-    resultsDiv.innerHTML = '';
-
-    // Filter team members based on selected state and city
-    const filteredMembers = originalMembers.filter(member => {
-        const matchesState = state ? member.Location.State === state : true;
-        const matchesCity = city ? member.Location.City === city : true;
-        return matchesState && matchesCity;
+    const filteredMembers = teamMembers.filter(member => {
+        const matchesState = member.Location.State === state;
+        const matchesCity = member.Location.City === city; // Ensure city matches
+        return matchesState && (city ? matchesCity : true); // Match state and optionally city
     });
 
-    // Display filtered results or show all members if none found
     if (filteredMembers.length > 0) {
         filteredMembers.forEach(member => {
             const memberDiv = createMemberDiv(member);
             resultsDiv.appendChild(memberDiv);
         });
     } else {
-        resultsDiv.innerHTML = '<h2 class="text-danger">No results found!!</h2>';
+        resultsDiv.innerHTML = '<h2 class="text-danger">No results found!</h2>';
     }
 
-    // Add back button
-    const backButton = document.createElement('button');
-    backButton.className = 'btn btn-secondary mt-3';
-    backButton.innerText = 'Back to All Members';
-    backButton.onclick = displayAllMembers;
-    resultsDiv.appendChild(backButton);
-
-      // Scroll to the results section
-      const resultsSection = document.getElementById('team');
-      resultsSection.scrollIntoView({ behavior: 'smooth' });
+      // Scroll to results
+      resultsDiv.scrollIntoView({ behavior: 'smooth' });
 }
+
+document.getElementById('submit_search').onclick = function(event) {
+    event.preventDefault(); // Prevent form submission
+    const state = document.getElementById('state').value;
+    const city = document.getElementById('city').value;
+    searchGirls(state, city);
+};
+
+function displayAllMembersInState(state) {
+    const resultsDiv = document.getElementById('results');
+    resultsDiv.innerHTML = ''; // Clear previous results
+
+    const membersInState = teamMembers.filter(member => member.Location.State === state);
+    membersInState.forEach(member => {
+        const memberDiv = createMemberDiv(member);
+        resultsDiv.appendChild(memberDiv);
+    });
+}
+
 
 // Initial display of all members
 displayAllMembers();
@@ -265,5 +273,26 @@ function getQueryParams() {
             params[decodeURIComponent(key)] = decodeURIComponent(value);
     });
     return params;
+}
+
+function displayCities(state) {
+    const citiesContainer = document.getElementById('cities-container');
+    citiesContainer.innerHTML = ''; // Clear previous city buttons
+
+    const cities = citiesByState[state];
+    cities.forEach(city => {
+        const cityButton = document.createElement('button');
+        cityButton.textContent = city;
+        cityButton.className = 'btn btn-secondary m-1';
+        cityButton.onclick = () => {
+            searchGirls(state, city);
+            // Scroll to results
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+        };
+        citiesContainer.appendChild(cityButton);
+    });
+
+    // Optionally display all members in the state
+    displayAllMembersInState(state);
 }
 

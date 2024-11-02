@@ -42,7 +42,7 @@
               <a class="nav-link" href="#team">Find Girls</a>
             </li>
             <li class="nav-item mx-3 my-1 text-success">
-              <a class="nav-link" href="#area">Find Areas Near You</a>
+              <a class="nav-link" href="cities.html">Find Areas Near You</a>
             </li>
            
           </ul>
@@ -85,65 +85,63 @@
 							<form name="search_form" method="post" id="search_form" action="javascript:void(0);" onsubmit="searchGirls()">
 									<input type="hidden" name="_token" value="IxCEnrgE55Rlfm6Fw2i3g0P49SdSPKYP4vYicFjt">
 									<div class="row justify-content-center align-items-center">
-											<div class="col-lg-5 col-sm-4">
-													<div class="selectBox ">
-															<select class="form-control all_state get_city  m-2 text-danger fs-3" id="state" required="required" name="state" onchange="populateCities()">
-																	<option value="" selected="selected">State</option>
-																	<option value="Andaman & Nicobar Islands">Andaman & Nicobar Islands</option>
-																	<option value="Andhra Pradesh">Andhra Pradesh</option>
-																	<option value="Arunachal Pradesh">Arunachal Pradesh</option>
-																	<option value="Assam">Assam</option>
-																	<option value="Bihar">Bihar</option>
-																	<option value="Chandigarh">Chandigarh</option>
-																	<option value="Chhattisgarh">Chhattisgarh</option>
-																	<option value="Dadra & Nagar Haveli">Dadra & Nagar Haveli</option>
-																	<option value="Daman & Diu">Daman & Diu</option>
-																	<option value="Delhi">Delhi</option>
-																	<option value="Goa">Goa</option>
-																	<option value="Gujarat">Gujarat</option>
-																	<option value="Haryana">Haryana</option>
-																	<option value="Himachal Pradesh">Himachal Pradesh</option>
-																	<option value="Jammu & Kashmir">Jammu & Kashmir</option>
-																	<option value="Jharkhand">Jharkhand</option>
-																	<option value="Karnataka">Karnataka</option>
-																	<option value="Kerala">Kerala</option>
-																	<option value="Lakshadweep">Lakshadweep</option>
-																	<option value="Madhya Pradesh">Madhya Pradesh</option>
-																	<option value="Maharashtra">Maharashtra</option>
-																	<option value="Manipur">Manipur</option>
-																	<option value="Meghalaya">Meghalaya</option>
-																	<option value="Mizoram">Mizoram</option>
-																	<option value="Nagaland">Nagaland</option>
-																	<option value="Odisha">Odisha</option>
-																	<option value="Puducherry">Puducherry</option>
-																	<option value="Punjab">Punjab</option>
-																	<option value="Rajasthan">Rajasthan</option>
-																	<option value="Sikkim">Sikkim</option>
-																	<option value="Tamil Nadu">Tamil Nadu</option>
-																	<option value="Telangana">Telangana</option>
-																	<option value="Tripura">Tripura</option>
-																	<option value="Uttar Pradesh">Uttar Pradesh</option>
-																	<option value="Uttarakhand">Uttarakhand</option>
-																	<option value="West Bengal">West Bengal</option>
-															</select>
-													</div>
-											</div>
-											<div class="col-lg-5 col-sm-4">
-													<div class="selectBox ">
-															<select name="city" class="all_cities form-control m-2 text-danger fs-3" id="city">
-																	<option value="">City</option>
-															</select>
-													</div>
-													<input type="hidden" name="cities" id="cities">
-											</div>
-											<div class="col-lg-2 col-sm-4">
-													<div class="input_form ">
-													
-															<button type="submit" class="form-control px-3 py-2.5 m-2" id="submit_search">Search<i class="bi bi-search ms-1"></i></button>
-														
-													</div>
-											</div>
-									</div>
+										<div class="col-lg-5 col-sm-4">
+												<div class="selectBox">
+														<select class="form-control all_state get_city m-2 text-danger fs-3" id="state" required="required" name="state" onchange="populateCities()">
+																<option value="" selected="selected">State</option>
+																<option value="Andaman & Nicobar Islands">Andaman & Nicobar Islands</option>
+																<option value="Andhra Pradesh">Andhra Pradesh</option>
+																<option value="Arunachal Pradesh">Arunachal Pradesh</option>
+																<option value="Assam">Assam</option>
+																<option value="Bihar">Bihar</option>
+																<option value="Chandigarh">Chandigarh</option>
+																<option value="Chhattisgarh">Chhattisgarh</option>
+																<option value="Dadra & Nagar Haveli">Dadra & Nagar Haveli</option>
+																<option value="Daman & Diu">Daman & Diu</option>
+																<option value="Delhi">Delhi</option>
+																<option value="Goa">Goa</option>
+																<option value="Gujarat">Gujarat</option>
+																<option value="Haryana">Haryana</option>
+																<option value="Himachal Pradesh">Himachal Pradesh</option>
+																<option value="Jammu & Kashmir">Jammu & Kashmir</option>
+																<option value="Jharkhand">Jharkhand</option>
+																<option value="Karnataka">Karnataka</option>
+																<option value="Kerala">Kerala</option>
+																<option value="Lakshadweep">Lakshadweep</option>
+																<option value="Madhya Pradesh">Madhya Pradesh</option>
+																<option value="Maharashtra">Maharashtra</option>
+																<option value="Manipur">Manipur</option>
+																<option value="Meghalaya">Meghalaya</option>
+																<option value="Mizoram">Mizoram</option>
+																<option value="Nagaland">Nagaland</option>
+																<option value="Odisha">Odisha</option>
+																<option value="Puducherry">Puducherry</option>
+																<option value="Punjab">Punjab</option>
+																<option value="Rajasthan">Rajasthan</option>
+																<option value="Sikkim">Sikkim</option>
+																<option value="Tamil Nadu">Tamil Nadu</option>
+																<option value="Telangana">Telangana</option>
+																<option value="Tripura">Tripura</option>
+																<option value="Uttar Pradesh">Uttar Pradesh</option>
+																<option value="Uttarakhand">Uttarakhand</option>
+																<option value="West Bengal">West Bengal</option>
+														</select>
+												</div>
+										</div>
+										<div class="col-lg-5 col-sm-4">
+												<div class="selectBox">
+														<select name="city" class="all_cities form-control m-2 text-danger fs-3" id="city">
+																<option value="">City</option>
+														</select>
+												</div>
+												<input type="hidden" name="cities" id="cities">
+										</div>
+										<div class="col-lg-2 col-sm-4">
+												<div class="input_form">
+														<button type="submit" class="form-control px-3 py-2.5 m-2" id="submit_search">Search<i class="bi bi-search ms-1"></i></button>
+												</div>
+										</div>
+								</div>
 							</form>
 					</div>
 								</div>
